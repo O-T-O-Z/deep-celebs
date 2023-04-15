@@ -48,6 +48,17 @@ class EarlyStopping:
 
 
 def get_data_loaders(root, download, target_type, batch_size, shuffle, num_workers):
+	"""
+	Returns dataloaders for the train and eval sets.
+
+	:param root: root of the dataset.
+	:param download: whether to download the dataset.
+	:param target_type: type of target to use, i.e. "attr", "landmarks".
+	:param batch_size: batch size.
+	:param shuffle: shuffle the data.
+	:param num_workers: number of workers.
+	:return: train and eval dataloaders.
+	"""
 	transform = transforms.Compose([
 		transforms.Resize(256),
 		transforms.CenterCrop(224),
@@ -62,6 +73,17 @@ def get_data_loaders(root, download, target_type, batch_size, shuffle, num_worke
 
 
 def train_model(model, data_loader, valid_data_loader, early_stopper, num_epochs, device):
+	"""
+	Executes the training loop.
+
+	:param model: model to train.
+	:param data_loader: data loader for the train set.
+	:param valid_data_loader: data loader for the eval set.
+	:param early_stopper: early stopping object.
+	:param num_epochs: number of epochs.
+	:param device: device to use.
+	:return: metrics of the training.
+	"""
 	model.to(device)
 	metrics = {
 		"train_loss": [],
@@ -91,7 +113,6 @@ def train_model(model, data_loader, valid_data_loader, early_stopper, num_epochs
 
 			loss.backward()
 			model.optimizer.step()
-		# model.scheduler.step()
 		metrics["train_loss"].append(np.mean(train_epoch_loss))
 		metrics["train_metric"].append(model.get_metric(all_preds, all_labels))
 		all_preds, all_labels = [], []
@@ -123,6 +144,14 @@ def train_model(model, data_loader, valid_data_loader, early_stopper, num_epochs
 
 
 def save_model(metrics, model, plots=True):
+	"""
+	Saves the model and the metrics.
+
+	:param metrics: metrics of the training.
+	:param model: model to save.
+	:param plots: whether to save the plots.
+	:return:
+	"""
 	with open(os.path.join(model.path, "metrics.json"), "w") as f:
 		json.dump(metrics, f)
 	if plots:
@@ -130,6 +159,12 @@ def save_model(metrics, model, plots=True):
 
 
 def plot_metrics(metrics, path):
+	"""
+	Plots the metrics.
+
+	:param metrics: metrics of the training.
+	:param path: path to save the plots.
+	"""
 	fig, ax = plt.subplots(1, 2, figsize=(15, 5))
 	ax[0].plot(metrics["train_loss"], label="Train")
 	ax[0].plot(metrics["eval_loss"], label="Eval")
@@ -146,6 +181,12 @@ def plot_metrics(metrics, path):
 
 
 def calculate_f1(attribute_metrics):
+	"""
+	Calculates the F1 score, precision, and recall.
+
+	:param attribute_metrics: metrics of the attributes.
+	:return: metrics of the attributes with F1, precision, and recall.
+	"""
 	for key in attribute_metrics.keys():
 		attr = attribute_metrics[key]
 		if attr["TP"] != 0:
@@ -160,6 +201,14 @@ def calculate_f1(attribute_metrics):
 
 
 def calculate_cm(pred, label, attribute_metrics):
+	"""
+	Calculates the confusion matrix values.
+
+	:param pred: predictions.
+	:param label: labels.
+	:param attribute_metrics: metrics of the attributes.
+	:return: metrics of the attributes with the confusion matrix values.
+	"""
 	attributes_list = list(attribute_metrics.keys())
 	for j_i, j in enumerate(pred):
 		for k_i, k in enumerate(j):

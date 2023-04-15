@@ -22,7 +22,7 @@ def main():
 	# model = AttributeClassifier(n_classes=40)
 	model = MultiTask()
 
-	model.load_state_dict(torch.load('models/multitaskSGD/best_model.pt', map_location=device))
+	model.load_state_dict(torch.load('../../models/multitaskSGD/best_model.pt', map_location=device))
 
 	model.eval()
 	model.to(device)

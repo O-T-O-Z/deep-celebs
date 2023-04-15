@@ -1,5 +1,4 @@
 import torch
-from utils import get_data_loaders
 from tqdm import tqdm
 import numpy as np
 from landmarks import LandmarkPredictor
@@ -21,7 +20,7 @@ def main():
 	test_data_loader = DataLoader(test_data, batch_size=32, shuffle=False, num_workers=8)
 	model = LandmarkPredictor(n_classes=10)
 	# model = MultiTask()
-	model.load_state_dict(torch.load('models/landmarksSGD/best_model.pt', map_location=device))
+	model.load_state_dict(torch.load('../../models/landmarksSGD/best_model.pt', map_location=device))
 
 	model.eval()
 	model.to(device)

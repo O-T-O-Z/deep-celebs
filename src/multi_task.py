@@ -13,7 +13,7 @@ class MultiTask(nn.Module):
 		resnet = resnet50(pretrained=True)
 
 		self.base_model = resnet
-		in_feat = resnet.fc.in_features  # important that this is before nn.Identity
+		in_feat = resnet.fc.in_features
 		self.base_model.fc = nn.Identity()
 		self.base_model.head1 = nn.Linear(in_features=in_feat, out_features=40)
 		self.base_model.head2 = nn.Linear(in_features=in_feat, out_features=10)
@@ -23,7 +23,7 @@ class MultiTask(nn.Module):
 		self.criterion1 = nn.BCELoss()
 		self.criterion2 = nn.MSELoss()
 		self.sigm = nn.Sigmoid()
-		self.path = os.path.join("models", "multitask2")
+		self.path = os.path.join("../models", "multitask2")
 		os.makedirs(self.path, exist_ok=True)
 
 	def forward(self, x):

@@ -1,15 +1,14 @@
 import matplotlib.pyplot as plt
 import json
-import numpy as np
 import os
 
 
 def load_data():
-	models = ["attributesSGD", "landmarksSGD", "multitask_with_loss"]
+	models = ["attributesSGD", "landmarks", "multitask"]
 	model_data = []
 
 	for m in models:
-		with open(os.path.join("models", m, "metrics.json"), "r") as f:
+		with open(os.path.join("../../models", m, "metrics.json"), "r") as f:
 			model_data.append(json.load(f))
 
 	return model_data
@@ -36,11 +35,10 @@ def plot_data():
 		if i == 0 or i == 2:
 			ax[i].set_ylim(0, 0.7)
 		else:
-			ax[i].set_ylim(0, 11)
-			ax[i].set_xticks(np.arange(2, 52, 8.0))
+			ax[i].set_ylim(0, 2)
 
 	handles, labels = ax[0].get_legend_handles_labels()
-	fig.legend(handles, labels, loc='lower center', ncols=2,bbox_to_anchor=(0.5, -0.08))
+	fig.legend(handles, labels, loc='lower center', ncol=2, bbox_to_anchor=(0.5, -0.08))
 
 	plt.suptitle("Learning Curves", fontsize=15)
 	plt.savefig("loss.pdf", bbox_inches="tight")

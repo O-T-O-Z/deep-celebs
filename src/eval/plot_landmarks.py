@@ -1,13 +1,9 @@
 import torch
-from utils import get_data_loaders
-from tqdm import tqdm
 from PIL import ImageDraw
-import numpy as np
 from landmarks import LandmarkPredictor
 from multi_task import MultiTask
 from torchvision import transforms
 from torchvision.datasets import CelebA
-from torch.utils.data import DataLoader
 
 
 def plot_landmarks(input, output, label):
@@ -36,7 +32,7 @@ def main():
 	test_data_no_transform = CelebA(root='data', split="test", download=False, target_type=["landmarks"])
 	# model = LandmarkPredictor(n_classes=10)
 	model = MultiTask()
-	model.load_state_dict(torch.load('models/multitask/best_model.pt', map_location=device))
+	model.load_state_dict(torch.load('../../models/multitask/best_model.pt', map_location=device))
 
 	model.eval()
 	model.to(device)
