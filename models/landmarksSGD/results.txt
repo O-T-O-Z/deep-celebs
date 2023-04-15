@@ -1,1 +1,1 @@
-Average MSE loss: 1.2407231585223126
+Average MSE loss: 1.3127115585674078
