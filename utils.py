@@ -57,9 +57,8 @@ def get_data_loaders(root, download, target_type, batch_size, shuffle, num_worke
 	train_data = CelebA(root=root, split="train", download=download, transform=transform, target_type=target_type)
 	train_data_loader = DataLoader(train_data, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
 	eval_data = CelebA(root=root, split="valid", download=download, transform=transform, target_type=target_type)
-	# eval_data_no_transform = CelebA(root=root, split="valid", download=download, target_type=target_type)
 	eval_data_loader = DataLoader(eval_data, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
-	return train_data_loader, eval_data_loader  # , eval_data_no_transform
+	return train_data_loader, eval_data_loader
 
 
 def train_model(model, data_loader, valid_data_loader, early_stopper, num_epochs, device):
