@@ -15,7 +15,9 @@ This repository contains the code for our Deep Learning final project. It contai
 Please make sure to set `download=True`in the `get_data_loaders` function in `utils.py` to download the data. 
 This will take a while, so please be patient. The data will be downloaded to the `data/` folder.
 
-Also please make sure to install all the required packages. You can do this by running `pip install -r requirements.txt`.
+Then, please make sure to install all the required packages. You can do this by running `pip install -r requirements.txt`.
+To pull the models, use `git lfs pull origin`. Finally, make sure that `src` is set as root (either through
+`export PYTHONPATH=src/` or mark as sources root).
 
 ## Training
 To train the models, please run the following commands:
