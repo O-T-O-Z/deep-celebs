@@ -1,47 +1,47 @@
 Attribute              Accuracy    Precision    Recall    F1
 -------------------  ----------  -----------  --------  ----
-5_o_Clock_Shadow           0.94         0.75      0.69  0.72
-Arched_Eyebrows            0.86         0.76      0.64  0.7
-Attractive                 0.8          0.85      0.76  0.8
-Bags_Under_Eyes            0.84         0.61      0.57  0.59
-Bald                       0.99         0.74      0.73  0.73
-Bangs                      0.96         0.85      0.86  0.85
-Big_Lips                   0.85         0.56      0.24  0.34
-Big_Nose                   0.83         0.66      0.66  0.66
-Black_Hair                 0.88         0.65      0.9   0.75
-Blond_Hair                 0.95         0.85      0.82  0.83
-Blurry                     0.96         0.73      0.37  0.49
-Brown_Hair                 0.79         0.91      0.15  0.26
-Bushy_Eyebrows             0.92         0.84      0.56  0.67
-Chubby                     0.95         0.62      0.44  0.51
-Double_Chin                0.96         0.69      0.41  0.51
-Eyeglasses                 0.99         0.9       0.98  0.94
-Goatee                     0.96         0.79      0.69  0.74
-Gray_Hair                  0.98         0.82      0.63  0.71
-Heavy_Makeup               0.89         0.95      0.77  0.85
-High_Cheekbones            0.88         0.9       0.83  0.86
+5_o_Clock_Shadow           0.92         0.66      0.74  0.7
+Arched_Eyebrows            0.8          0.86      0.29  0.43
+Attractive                 0.8          0.83      0.78  0.8
+Bags_Under_Eyes            0.83         0.68      0.38  0.49
+Bald                       0.99         0.71      0.65  0.68
+Bangs                      0.96         0.89      0.79  0.84
+Big_Lips                   0.86         0.76      0.08  0.15
+Big_Nose                   0.81         0.6       0.69  0.64
+Black_Hair                 0.9          0.83      0.68  0.75
+Blond_Hair                 0.94         0.77      0.88  0.82
+Blurry                     0.96         0.61      0.4   0.48
+Brown_Hair                 0.81         0.88      0.23  0.37
+Bushy_Eyebrows             0.91         0.82      0.51  0.63
+Chubby                     0.95         0.69      0.19  0.29
+Double_Chin                0.96         0.67      0.32  0.43
+Eyeglasses                 0.99         0.97      0.92  0.95
+Goatee                     0.96         0.68      0.79  0.73
+Gray_Hair                  0.96         0.89      0.29  0.44
+Heavy_Makeup               0.91         0.85      0.92  0.89
+High_Cheekbones            0.87         0.83      0.88  0.86
 Male                       0.98         0.97      0.98  0.98
-Mouth_Slightly_Open        0.94         0.94      0.93  0.94
-Mustache                   0.96         0.74      0.24  0.36
-Narrow_Eyes                0.94         0.67      0.38  0.49
-No_Beard                   0.96         0.97      0.98  0.97
-Oval_Face                  0.76         0.63      0.34  0.44
-Pale_Skin                  0.96         0.57      0.59  0.58
-Pointy_Nose                0.77         0.65      0.4   0.5
-Receding_Hairline          0.95         0.73      0.38  0.5
-Rosy_Cheeks                0.94         0.8       0.21  0.33
-Sideburns                  0.97         0.77      0.75  0.76
-Smiling                    0.93         0.93      0.92  0.93
-Straight_Hair              0.84         0.67      0.39  0.49
-Wavy_Hair                  0.85         0.71      0.75  0.73
-Wearing_Earrings           0.91         0.82      0.67  0.73
-Wearing_Hat                0.99         0.87      0.9   0.89
-Wearing_Lipstick           0.93         0.92      0.91  0.92
-Wearing_Necklace           0.88         1         0     0
-Wearing_Necktie            0.94         0.61      0.52  0.56
-Young                      0.88         0.89      0.95  0.92
-Overall Accuracy:  0.910837066492173
-Overall Precision:  0.78262048403119
-Overall Recall:  0.6220592391353705
-Overall F1:  0.6633977484322247
+Mouth_Slightly_Open        0.94         0.94      0.92  0.93
+Mustache                   0.95         0.59      0.35  0.44
+Narrow_Eyes                0.93         0.79      0.12  0.21
+No_Beard                   0.95         0.98      0.96  0.97
+Oval_Face                  0.7          0.47      0.56  0.51
+Pale_Skin                  0.96         0.86      0.01  0.01
+Pointy_Nose                0.75         0.75      0.16  0.26
+Receding_Hairline          0.94         0.69      0.31  0.43
+Rosy_Cheeks                0.94         0.72      0.29  0.42
+Sideburns                  0.96         0.66      0.8   0.72
+Smiling                    0.92         0.92      0.91  0.92
+Straight_Hair              0.82         0.71      0.23  0.35
+Wavy_Hair                  0.85         0.77      0.66  0.71
+Wearing_Earrings           0.85         0.9       0.27  0.42
+Wearing_Hat                0.99         0.93      0.75  0.83
+Wearing_Lipstick           0.92         0.88      0.94  0.91
+Wearing_Necklace           0.88         0.67      0.01  0.03
+Wearing_Necktie            0.93         0.59      0.09  0.15
+Young                      0.86         0.86      0.98  0.91
+Overall Accuracy:  0.9027658931897116
+Overall Precision:  0.7783910187641657
+Overall Recall:  0.5430956797620734
+Overall F1:  0.5867779398851238
 Number of samples:  19867
