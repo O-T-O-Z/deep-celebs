@@ -15,6 +15,9 @@ def load_data():
 
 
 def plot_data():
+	"""
+	Plot our the three loss curves (single, single, multi)
+	"""
 	model_data = load_data()
 
 	fig, ax = plt.subplots(1, 3, figsize=(15, 5))

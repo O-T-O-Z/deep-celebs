@@ -18,6 +18,9 @@ def read_data(file):
 
 
 def latex_table():
+	"""
+	Make latex table for report
+	"""
 	_, _, scores_single = read_data(os.path.join("../../models", "attributesSGD", "results.txt"))
 	_, _, scores_multi = read_data(os.path.join("../../models", "multitask", "results_attr.txt"))
 	sep = " & "
@@ -31,6 +34,9 @@ def latex_table():
 
 
 def plot():
+	"""
+	Plot f1-score per attribute
+	"""
 	atts, scores_single, _ = read_data(os.path.join("../../models", "attributesSGD", "results.txt"))
 	_, scores_multi, _ = read_data(os.path.join("../../models", "multitask", "results_attr.txt"))
 
