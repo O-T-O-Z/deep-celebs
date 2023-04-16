@@ -20,7 +20,7 @@ def plot_data():
 	fig, ax = plt.subplots(1, 3, figsize=(15, 5))
 
 	losses = ["BCE", "MSE", "(BCE + MSE)"]
-	titles = ["Attribute", "Landmark", "Attribute + Landmark"]
+	titles = ["Attribute (Single)", "Landmark (Single)", "Attribute + Landmark (Multi)"]
 	colors = ["orangered", "limegreen"]
 
 	for i, model in enumerate(model_data):

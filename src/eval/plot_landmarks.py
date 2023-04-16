@@ -4,20 +4,25 @@ from landmarks import LandmarkPredictor
 from multi_task import MultiTask
 from torchvision import transforms
 from torchvision.datasets import CelebA
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
 
 def plot_landmarks(input, output, label):
 	output = output.detach().cpu().numpy()
 	label = label.detach().cpu().numpy()
 
-	draw = ImageDraw.Draw(input)
-	for coord in output:
-		draw.ellipse((coord[0] - 3, coord[1] - 3, coord[0] + 3, coord[1] + 3), fill='red')
+	plt.imshow(input)
 
-	input.save("pred.jpg")
 	for coord in label:
-		draw.ellipse((coord[0] - 3, coord[1] - 3, coord[0] + 3, coord[1] + 3), fill='green')
-	input.save("label.jpg")
+		rect = patches.Ellipse((coord[0], coord[1]), 10, 10, linewidth=2, facecolor='blue', alpha=1)
+		plt.gca().add_patch(rect)
+
+	for coord in output:
+		rect = patches.Ellipse((coord[0], coord[1]), 10, 10, linewidth=2, facecolor='green', alpha=1)
+		plt.gca().add_patch(rect)
+	
+	plt.savefig("landmark_example.pdf", bbox_inches="tight")
 
 
 def main():
@@ -36,7 +41,7 @@ def main():
 
 	model.eval()
 	model.to(device)
-	test_img_idx = 0
+	test_img_idx = 12
 	with torch.no_grad():
 		input, label = test_data[test_img_idx]
 		input = input[None, :]
