@@ -6,6 +6,10 @@ import os
 
 
 class LandmarkPredictor(nn.Module):
+	"""
+	Our single task model doing regression
+	"""
+
 	def __init__(self, n_classes):
 		super().__init__()
 		resnet = resnet50(pretrained=True)
@@ -25,7 +29,6 @@ class LandmarkPredictor(nn.Module):
 		for i, pred in enumerate(all_preds):
 			losses.append(self.criterion(pred, all_labels[i]))
 		result = sum(losses) / len(losses)
-		# del losses
 		return result.cpu().item()
 
 

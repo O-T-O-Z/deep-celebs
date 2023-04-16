@@ -8,6 +8,10 @@ import numpy as np
 
 
 class MultiTask(nn.Module):
+	"""
+	Our multitask model doing both classification and regression
+	"""
+
 	def __init__(self):
 		super().__init__()
 		resnet = resnet50(pretrained=True)

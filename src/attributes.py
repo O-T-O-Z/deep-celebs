@@ -6,6 +6,10 @@ import os
 
 
 class AttributeClassifier(nn.Module):
+	"""
+	Our single task model doing classification
+	"""
+
 	def __init__(self, n_classes):
 		super().__init__()
 		resnet = resnet50(pretrained=True)

@@ -9,7 +9,7 @@ import json
 import matplotlib.pyplot as plt
 
 
-# Adapted from: https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
+# The class below has been adapted from: https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
 class EarlyStopping:
 	"""
 	Early stops the training process while also saving the model to a specified checkpoint.
@@ -59,6 +59,8 @@ def get_data_loaders(root, download, target_type, batch_size, shuffle, num_worke
 	:param num_workers: number of workers.
 	:return: train and eval dataloaders.
 	"""
+
+	# we follow the procedure as presented by https://github.com/ndb796/CelebA-HQ-Face-Identity-and-Attributes-Recognition-PyTorch
 	transform = transforms.Compose([
 		transforms.Resize(256),
 		transforms.CenterCrop(224),
